@@ -7,5 +7,5 @@ Unauthorized modification, extraction, dumping, or redistribution of this source
 ```lua
 -- Made by Kinzin (._.Kinzin)
 -- Copyright (c) 2025 Kinzin. Redistribution allowed, but modifying the source or removing credits is strictly prohibited and will result in legal action.
-loadstring(game:HttpGet(""))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/JaoExploiter/Nodle-FE/refs/heads/main/Source.lua"))()
 ```
