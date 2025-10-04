@@ -1,4 +1,25 @@
 -- Copyright (c) 2025 Kinzin. Redistribution allowed, but modifying the source or removing credits is strictly prohibited and will result in legal action.
+
+local Players = game:GetService("Players")
+local TeleportService = game:GetService("TeleportService")
+local lp = Players.LocalPlayer or Players.PlayerAdded:Wait()
+
+local placeId = 15396672937
+
+if game.PlaceId ~= placeId then
+    local success, err = pcall(function()
+        TeleportService:Teleport(placeId, lp)
+    end)
+
+    if not success then
+        warn("Teleport failed:", err)
+        pcall(function()
+            setclipboard("https://www.roblox.com/games/"..placeId)
+        end)
+        warn("Game link copied to clipboard. Join manually if teleport failed.")
+    end
+end
+
 local Players=game:GetService("Players")
 local target=15396672937
 local lp=Players.LocalPlayer or Players.PlayerAdded:Wait()
