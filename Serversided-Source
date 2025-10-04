@@ -1,3 +1,4 @@
+-- Pls do not execute this is a debugfile
 local Players = game:GetService("Players")
 local TeleportService = game:GetService("TeleportService")
 local lp = Players.LocalPlayer or Players.PlayerAdded:Wait()
